@@ -1,11 +1,10 @@
 package main
 
 import (
-	"bufio"
+	"../common"
 	"fmt"
 	"log"
 	"math"
-	"os"
 	"strconv"
 )
 
@@ -24,14 +23,7 @@ func getFuelRecursive(mass int) int {
 }
 
 func main() {
-	file, err := os.Open("input")
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	// create a scanner to open the file
-	scanner := bufio.NewScanner(file)
+	scanner := common.GetScanner("day1/input")
 	totalFuel := 0
 
 	// for each line in the input calculate the fuel and increase the totalFuel
@@ -50,3 +42,5 @@ func main() {
 		log.Fatal(err)
 	}
 }
+
+
